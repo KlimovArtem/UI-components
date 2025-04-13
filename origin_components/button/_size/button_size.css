@@ -1,0 +1,12 @@
+/* модификаторы размера */
+.button_size_s {
+  --btn-size: 2rem;
+}
+ 
+.button_size_m {
+  --btn-size: 4rem;
+}
+ 
+.button_size_l {
+  --btn-size: 6rem;
+}

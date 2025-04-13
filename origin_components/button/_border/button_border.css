@@ -1,0 +1,12 @@
+/* модификаторы скругления углов  */
+.button_border_rounded {
+  --btn-border-radius: calc(var(--btn-size) / 3.2);
+}
+ 
+.button_border_round {
+  --btn-border-radius: calc(var(--btn-size) / 0);
+}
+ 
+.button_border_square {
+  --btn-border-radius: calc(var(--btn-size) / 999);
+}
