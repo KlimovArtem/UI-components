@@ -1,0 +1,19 @@
+/* модификаторы отображжения иконки */
+.button_with-icon_left {
+  --btn-icon-position: row;
+  --btn-icon-visibility: visible;
+  gap: calc(var(--btn-size) / 3);
+ }
+ 
+.button_with-icon_right {
+  --btn-icon-position: row-reverse;
+  --btn-icon-visibility: visible;
+  gap: calc(var(--btn-size) / 3);
+}
+ 
+.button_with-icon_only {
+  --btn-icon-visibility: visible;
+  min-width: inherit;
+  padding: calc(var(--btn-size) / 3);
+  --btn-text-size: 0;
+}

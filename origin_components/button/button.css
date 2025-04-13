@@ -1,4 +1,7 @@
 @import url("_theme/default.css");
+@import url("__icon/button__icon.css");
+@import url("__text/button__text.css");
+@import url("_with-icon/button_with-icon.css");
 
 .button {
   /* сброс стилей */
