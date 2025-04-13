@@ -1,0 +1,30 @@
+.button {
+  /* позиционирование */
+  --btn-icon-position: row;
+  --btn-icon-visibility: hidden;
+  /* размер */
+  --btn-size: 1.5rem;
+  --btn-text-size: var(--btn-size);
+  /* декорирование */
+  --btn-background: darkgrey;
+  --btn-hover-color: grey;
+  --btn-focus-color: lightgtey;
+  --btn-disabled-color: lightgrey;
+  --btn-disabled-background: transparent;
+  --btn-text-color: white;
+  --btn-border-radius: calc(var(--btn-size) / 3.2);
+}
+
+html {
+  font-family: Helvetica, sans-serif;
+  font-size: 10px;
+  box-sizing: border-box;
+}
+ 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,50 @@
+@import url("_theme/default.css");
+
+.button {
+  /* сброс стилей */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  border: 0;
+  /* позиционирование */
+  display: inline-flex;
+  flex-direction: var(--btn-icon-position);
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* размер */
+  min-width: calc(var(--btn-size) * 4);
+  height: calc(                          /* font-size * line-height + */
+    calc(var(--btn-size) * 1.5) +        /* (padding_top + padding_bottom) + */
+    calc(var(--btn-size) * 0.75)         /* (top_border_width + bottom_border_width) */
+  );   
+  line-height: 1.5; 
+  padding: calc(var(--btn-size) * 0.375) calc(var(--btn-size) * 0.75);
+  font-size: var(--btn-size);
+  /* декорирование */
+  border-radius: var(--btn-border-radius);
+  background: var(--btn-background);
+  color: var(--btn-text-color);
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* контроль состояний */
+.button:hover {
+  background: var(--btn-hover-color);
+}
+ 
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 calc(var(--btn-size) / 4) var(--btn-focus-color);
+}
+ 
+.button[disabled] {
+  color: var(--btn-disabled-color);
+  background: var(--btn-disabled-background);
+  cursor: not-allowed;
+  box-shadow: 0 0 0 2px var(--btn-disabled-color);
+}

@@ -1,0 +1,7 @@
+.button__icon {
+  visibility: var(--btn-icon-visibility);
+  width: var(--btn-size);
+  height: var(--btn-size);
+  fill: currentColor;
+  transform: translateY(-1px);
+}
