@@ -1,0 +1,48 @@
+@import url("_theme/default.css");
+
+.toggle {
+  /* сброс стилей */
+  all: unset;
+  /* позиционирование */
+  display: inline-block;
+  position: relative;
+  /* размер */
+  width: var(--toggle-track-size);
+  height: var(--toggle-thumb-size);
+  padding: 1px;
+  border: 2px solid;
+  /* декорирование */
+  border-color: var(--toggle-track-color);
+  border-radius: var(--toggle-track-border-radius);
+  background: var(--toggle-track-background);
+}
+
+/* контроль стотояния */
+.toggle:hover {
+  --toggle-thumb-color: grey;
+} 
+
+.toggle:focus {
+  box-shadow: 0 0 0 calc(var(--toggle-thumb-size) * 0.1) var(--toggle-focus-color);
+}
+
+/* переключатель */
+.toggle::before {
+  content: "";
+  /* позиционирование */
+  display: inline-block;
+  position: relative;
+  inset: 0;
+  /* размер */
+  width: var(--toggle-thumb-size);
+  height: var(--toggle-thumb-size);
+  /* декорирование */
+  border-radius: var(--toggle-thumb-border-radius);
+  background: var(--toggle-thumb-color);
+  transition: inset 0.2s ease-in;
+}
+
+.toggle:checked::before {
+  inset: 0 0 0 calc(var(--toggle-track-size) - var(--toggle-thumb-size));
+  transition: inset 0.2s ease-in;
+}

@@ -1,0 +1,25 @@
+.toggle {
+  /* переключатель */
+  --toggle-thumb-size: 2rem;
+  --toggle-thumb-border-radius: calc(var(--toggle-thumb-size) / 2);
+  --toggle-thumb-color: darkgrey;
+  /* трек */
+  --toggle-track-size: calc(var(--toggle-thumb-size) * 2);
+  --toggle-track-color: darkgrey;
+  --toggle-track-border-radius: calc(var(--toggle-thumb-border-radius) * 2);
+  --toggle-track-background: transparent;
+  --toggle-focus-color: lightgrey;
+}
+
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
