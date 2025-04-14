@@ -1,0 +1,8 @@
+.text-field__icon {
+  position: absolute;
+  inset: var(--tf-icon-position);
+  width: var(--tf-size);
+  height: calc(calc(var(--tf-size) * 1) + calc(var(--tf-size) * 0.70));
+  fill: var(--tf-border-color);
+  visibility: var(--tf-icon-visibility);
+}

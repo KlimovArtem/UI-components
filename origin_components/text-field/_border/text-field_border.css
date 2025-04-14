@@ -1,0 +1,11 @@
+.text-field_border_rounded {
+	--tf-border-radius: calc(var(--tf-size) / 3.2);
+}
+
+.text-field_border_round {
+	--tf-border-radius: calc(var(--tf-size) / 0);
+}
+
+.text-field_border_square {
+	--tf-border-radius: calc(var(--tf-size) / 999);
+}
