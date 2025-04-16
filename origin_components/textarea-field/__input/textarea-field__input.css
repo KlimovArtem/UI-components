@@ -1,0 +1,6 @@
+.textarea-field__input {
+  all: unset;
+  resize: vertical;
+  width: 100%;
+  height: 100%;
+}

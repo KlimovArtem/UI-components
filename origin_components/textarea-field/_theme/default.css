@@ -1,0 +1,29 @@
+.textarea-field {
+  --taf-size: 1.5rem;
+  --taf-border-radius: calc(var(--taf-size) / 3.2);
+  --taf-icon-visibility: hidden;
+  --taf-color: black;
+  --taf-background-color: transparent;
+  --taf-border-color: grey;
+  --taf-focus-color: lightgrey;
+  --taf-disabled-background: lightgrey;
+  --taf-disabled-color: white;
+  --taf-valid-border-color: #198754;
+  --taf-invalid-border-color: #dc3545;
+  --taf-invalid-focus-color: #f6cdd1;
+  --taf-valid-focus-color: #c6e1d4;
+}
+
+html {
+  font-family: Helvetica, sans-serif;
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}

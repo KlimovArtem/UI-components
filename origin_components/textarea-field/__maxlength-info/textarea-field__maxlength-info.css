@@ -1,0 +1,6 @@
+.textarea-field__maxlength-info {
+  position: absolute;
+  top: calc(92% - calc(var(--taf-size) * 0.375));
+  left: calc(var(--taf-size) * 0.75);
+  color: var(--taf-focus-color);
+}
