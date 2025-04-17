@@ -1,5 +1,6 @@
 .textarea-field__input {
   all: unset;
+  display: inline-block;
   resize: vertical;
   width: 100%;
   height: 100%;

@@ -8,17 +8,15 @@
 .textarea-field {
   /* позиционирование */
   position: relative;
-  margin: 0;
   /* размер */
   width: 100%;
   min-height: calc(
     calc(var(--taf-size) * 3) + calc(var(--taf-size) * 0.75) + 4px
   ); /* font_size * line_height + (padding_top + padding_bottom) + (top_border_width + bottom_border_width)*/ /* font_size * line_height + (padding_top + padding_bottom) + (top_border_width + bottom_border_width)*/
   height: fit-content;
-  padding: calc(var(--taf-size) * 0.375) calc(var(--taf-size) * 0.75);
   line-height: 1.5;
+  padding: 0.5rem;
   border: 2px solid var(--taf-border-color);
-  font-size: var(--taf-size);
   /* декорирование */
   border-radius: var(--taf-border-radius);
   background-color: var(--taf-background-color);
