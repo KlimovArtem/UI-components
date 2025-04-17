@@ -1,0 +1,54 @@
+/* import styles for child element and other */
+@import url("_theme/default.css");
+@import url("__input/textarea-field__input.css");
+@import url("__icon/textarea-field__icon.css");
+@import url("__maxlength-info/textarea-field__maxlength-info.css");
+
+  
+.textarea-field {
+  /* позиционирование */
+  position: relative;
+  /* размер */
+  width: 100%;
+  min-height: calc(
+    calc(var(--taf-size) * 3) + calc(var(--taf-size) * 0.75) + 4px
+  ); /* font_size * line_height + (padding_top + padding_bottom) + (top_border_width + bottom_border_width)*/ /* font_size * line_height + (padding_top + padding_bottom) + (top_border_width + bottom_border_width)*/
+  height: fit-content;
+  line-height: 1.5;
+  padding: 0.5rem;
+  border: 2px solid var(--taf-border-color);
+  /* декорирование */
+  border-radius: var(--taf-border-radius);
+  background-color: var(--taf-background-color);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+  
+/* контроль состояний */
+.textarea-field:has(.textarea-field__input:focus) {
+  outline: 0;
+  box-shadow: 0 0 0 calc(var(--taf-size) * 0.2) var(--taf-focus-color);
+}
+  
+.textarea-field:has(.textarea-field__input:disabled),
+.textarea-field:has(.textarea-field__input[readonly]) {
+  --taf-background-color: var(--taf-disabled-background);
+  --taf-border-color: var(--taf-disabled-color);
+  color: var(--taf-disabled-color);
+  opacity: 1;
+}
+  
+.textarea-field:has(.textarea-field__input:user-valid) {
+  --taf-border-color: var(--taf-valid-border-color);
+}
+  
+.textarea-field:has(.textarea-field__input:focus:user-valid) {
+  --taf-focus-color: var(--taf-valid-focus-color);
+}
+  
+.textarea-field:has(.textarea-field__input:user-invalid) {
+  --taf-border-color: var(--taf-invalid-border-color);
+}
+  
+.textarea-field:has(.textarea-field__input:focus:user-invalid) {
+  --taf-focus-color: var(--taf-invalid-focus-color);
+}
