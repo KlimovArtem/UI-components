@@ -1,0 +1,11 @@
+.text-field_size_s {
+	--tf-size: 1.5rem;
+}
+
+.text-field_size_m {
+	--tf-size: 3rem;
+}
+
+.text-field_size_l {
+	--tf-size: 4.5rem;
+}

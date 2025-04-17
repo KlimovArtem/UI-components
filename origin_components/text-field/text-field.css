@@ -1,0 +1,57 @@
+@import url("_theme/default.css");
+@import url("__input/text-field__input.css");
+@import url("__icon/text-field__icon.css");
+@import url("_with-icon/text-field_with-icon.css");
+
+.text-field {
+    /* positioning */
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    /* size */
+    width: 100%;
+    height: calc(
+        calc(var(--tf-size) * 1.5) + calc(var(--tf-size) * 0.75) + 4px
+    ); /* font_size * line_height + (padding_top + padding_bottom) + (top_border_width + bottom_border_width)*/ /* font_size * line_height + (padding_top + padding_bottom) + (top_border_width + bottom_border_width)*/
+    padding: calc(var(--tf-size) * 0.375) calc(var(--tf-size) * 0.75);
+    line-height: 1.5;
+    border: 2px solid var(--tf-border-color);
+    font-size: var(--tf-size);
+    /* decoration */
+    font-family: inherit;
+    border-radius: var(--tf-border-radius);
+    background-color: var(--tf-background-color);
+    transition:
+        border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+}
+
+/* контроль сотояния */
+.text-field:has(.text-field__input:focus) {
+    outline: 0;
+    box-shadow: 0 0 0 calc(var(--tf-size) * 0.2) var(--tf-focus-color);
+}
+
+.text-field:has(.text-field__input:disabled),
+.text-field:has(.text-field__input[readonly]) {
+    --tf-background-color: var(--tf-disabled-background);
+    --tf-border-color: var(--tf-disabled-color);
+    color: var(--tf-disabled-color);
+    opacity: 1;
+}
+
+.text-field:has(.text-field__input:user-valid) {
+    --tf-border-color: var(--tf-valid-border-color);
+}
+
+.text-field:has(.text-field__input:focus:user-valid) {
+    --tf-focus-color: var(--tf-valid-focus-color);
+}
+
+.text-field:has(.text-field__input:user-invalid) {
+    --tf-border-color: var(--tf-invalid-border-color);
+}
+
+.text-field:has(.text-field__input:focus:user-invalid) {
+    --tf-focus-color: var(--tf-invalid-focus-color);
+}
