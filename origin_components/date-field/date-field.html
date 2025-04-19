@@ -1,0 +1,80 @@
+<link href="date-field.css" rel="stylesheet" />
+<div class="date-field" data-date-field>
+  <input type="text"
+         placeholder="дд.мм.гггг"
+         pattern="(0[1-9]|[1-2][0-9]|3[01])\.(0[1-9]|1[0-2])\.(202[5-9]|203[1-5])"
+         class="date-field__input"
+         data-date-field__input
+  >
+  <button class="button button_with-icon_only button_size_s date-field__button"
+          data-date-picker__open-button
+  >
+	  <svg xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 24 24"
+         aria-hidden="true"
+         focusable="false"
+         class="button__icon"
+    >
+		  <path stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+      />
+	  </svg>
+	  <span class="button__text">Открыть календарь</span>
+  </button>
+  <section class="date-picker" data-date-picker>
+    <header class="date-picker__header">
+      <section class="date-picker__month-switcher">
+        <button class="button button_with-icon_only date-picker__switcher-button"
+                data-date-picker__month-switcher-deacrease-button
+        >
+          <svg xmlns="http://w3.org/2000/svg"
+               fill="none"
+               viewBox="0 0 24 24"
+               class="button__icon date-picker__switcher-button-icon"
+          >
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5 8.25 12l7.5-7.5"
+            />
+          </svg>
+          <span class="button__text">Уменьшить месяц</span>
+        </button>
+        <span class="date-picker__month-swithcer-title" data-date-picker__month-switcher-title></span>
+        <button class="button button_with-icon_only date-picker__switcher-button"
+                data-date-picker__month-switcher-increase-button
+        >
+          <svg xmlns="http://w3.org/2000/svg"
+               fill="none"
+               viewBox="0 0 24 24"
+               class="button__icon date-picker__switcher-button-icon"
+          >
+            <path stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m8.25 4.5 7.5 8.5-7.5 7.5"
+            />
+          </svg>
+          <span class="button__text">увеличить месяц</span>
+        </button>
+      </section>
+    </header>
+    <table class="date-picker__calendar" data-date-picker__calendar>
+      <thead>
+        <tr>
+          <th scope="col">Пн</th>
+          <th scope="col">Вт</th>
+          <th scope="col">Ср</th>
+          <th scope="col">Чт</th>
+          <th scope="col">Пт</th>
+          <th scope="col">Сб</th>
+          <th scope="col">Вс</th>
+        </tr>
+      </thead>
+      <tbody class="date-picker__dates"
+             data-date-picker__dates
+      >
+      </tbody>
+    </table
+  </section>
+</div>
+<script src="date-field.js" defer></script>
