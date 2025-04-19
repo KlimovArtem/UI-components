@@ -1,0 +1,41 @@
+@import url(../button/button.css);
+@import url(_theme/default.css);
+@import url(__input/select__input.css);
+@import url(__button/select__button.css);
+@import url(__options/select__options.css);
+@import url(__option/select_option.css);
+
+.select {
+  /* позиционирование */
+  position: relative;
+  margin: 0;
+  /* размер */
+  width: 100%;
+  height: calc(
+    calc(var(--select-size) * 1.5) + calc(var(--select-size) * 0.75) + 4px
+  );
+  padding: calc(var(--select-size) * 0.375) calc(var(--select-size) * 0.75);
+  line-height: 1.5;
+  border: 2px solid var(--select-border-color);
+  font-size: var(--select-size);
+  /* декорировнаие */
+  font-family: inherit;
+  border-radius: var(--select-border-radius);
+  background-color: var(--select-background-color);
+  transition:
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}
+
+/* контроль состояний */
+.select:has(.select__input:focus) {
+  outline: 0;
+  box-shadow: 0 0 0 calc(var(--select-size) * 0.2) var(--select-focus-color);
+}
+
+.select:has(.select__input:disabled) {
+  --select-background-color: var(--select-disabled-background);
+  --select-border-color: var(--select-disabled-color);
+  color: var(--select-disabled-color);
+  opacity: 1;
+}

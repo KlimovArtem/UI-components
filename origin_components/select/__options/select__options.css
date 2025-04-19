@@ -1,0 +1,25 @@
+.select__options {
+  all: unset;
+  list-style-type: none;
+  position: absolute;
+  visibility: hidden;
+  top: calc(calc(var(--select-size) * 1.7) + calc(var(--select-size) * 0.75) + 2px);
+  left: -2px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 2px solid var(--select-border-color);
+  border-radius: var(--select-border-radius);
+  opacity: 0;
+  transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.select__options[class*="_round"] {
+  border-radius: calc(var(--select-border-radius) / 3.2);
+}
+
+.select__options_visible {
+  opacity: 1;
+  visibility: visible;
+  transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}

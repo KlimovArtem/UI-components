@@ -1,0 +1,22 @@
+.select__option {
+  width: 100%;
+  padding: calc(var(--select-size)* 0.75) calc(var(--select-size)* 0.75);
+  line-height: 1;
+  /*border-radius: var(--select-border-radius); */
+  cursor: pointer;
+}
+
+.select__option[data-selected],
+.select__option:hover {
+  background: var(--select-focus-color);
+	 &:first-child {
+    clip-path: inset(0 round	calc(var(--select-border-radius) - 2px) calc(var(--select-border-radius) - 2px) 0px 0px);
+	 }
+	&:last-child {
+    clip-path: inset(0 round	0 0 calc(var(--select-border-radius) - 2px) calc(var(--select-border-radius) - 2px));
+	 }
+}
+
+.select__option[data-selected] {
+  background-color: var(--select-focus-color);
+}

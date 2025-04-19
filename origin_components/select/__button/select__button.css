@@ -1,0 +1,28 @@
+.select__button {
+  position: absolute;
+  top: 0;
+  left: calc(100% - calc(var(--select-size) * 3.5));
+  --btn-size: 2rem;
+  height: calc(calc(var(--select-size) * 1.5) + calc(var(--select-size) * 0.75) + 2px);
+  stroke: var(--select-border-color);
+  color: var(--select-border-color);
+  --btn-background: transparent;
+  cursor: pointer;
+}
+
+/* контроль состояний */
+.button:hover {
+  background: transparent;
+}
+ 
+.button:focus {
+  outline: none;
+  box-shadow: none;
+}
+ 
+.button[disabled] {
+  color: var(--select-border-color);
+  --btn-disabled-background: transparent;
+  cursor: not-allowed;
+  box-shadow: none;
+}
