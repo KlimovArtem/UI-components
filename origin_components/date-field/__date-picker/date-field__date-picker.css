@@ -12,7 +12,7 @@
   gap: 0.75rem;
   padding: 0.75rem;
   width: calc(var(--df-size)* 17);
-  min-height: calc(var(--df-size) * 15);
+  min-height: calc(var(--df-size) * 17);
   border: 2px solid var(--df-border-color);
   border-radius: var(--df-border-radius);
   opacity: 0;
@@ -61,12 +61,17 @@
   font-variant-numeric: lining-nums tabular-nums;
 }
 
+.date-picker__header-cell,
+.date-picker__date-cell {
+  padding: calc(var(--df-size) * 0.3);
+}
+
 .date-picker__header-cell {
   font-weight: bold;
 }
 
 .date-picker__date-cell:hover {
-  box-shadow: 0 0 1px 0 #ccc;
+  box-shadow: 0 0 0 2px var(--df-focus-color);
   border-radius: var(--date-picker-border-radius);
   cursor: pointer;
 }
