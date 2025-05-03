@@ -1,0 +1,35 @@
+<link href="popover.css" rel="stylesheet">
+<menu data-menu>
+  <button class="button"
+          data-popover-open-btn
+  >
+    <span class="button_text>open-popover">open-popover</span>
+  </button>
+</menu>
+
+<dialog class="popover"
+        aria-labelledby="[popover-header element id]"
+        aria-describedby="[popover-content element id]"
+        data-popover>
+  <header class="popover__header">
+    <button class="button button_with-icon_only popover__close-button"
+            aria-label="Close popover"
+            data-popover__close-button>
+      <svg xmlns="http://www.w3.org/2000/svg"
+           fill="none"
+           viewBox="0 0 24 24"
+           stroke-width="1.5"
+           class="button__icon"
+      >
+        <path stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18 18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <h2 id="[popover-header element id]">Popover header</h2>
+  </header>
+  <section id="[popover-content element id]"
+           class="popover__content">
+  </section>
+</dialog>
+<script src="popover.js"></script>
