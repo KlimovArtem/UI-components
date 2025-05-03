@@ -1,6 +1,4 @@
-document.querySelectorAll("[data-menu]").forEach(el => {
-  const openBtn = el.querySelector("[data-menu-open-btn]");
-  
+document.querySelectorAll("[data-popover-open-btn]").forEach(openBtn  => {
   let popover = document.querySelector("[data-popover]");
   
   openBtn.addEventListener("click", e => {
