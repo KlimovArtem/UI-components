@@ -1,0 +1,3 @@
+.toggle_long-track {
+  --toggle-track-size: calc(var(--toggle-thumb-size) * 5);  
+}
