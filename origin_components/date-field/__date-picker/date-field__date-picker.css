@@ -1,0 +1,104 @@
+.date-picker {
+  --date-picker-border-radius: calc(var(--df-size) / 3.2);
+}
+
+.date-picker {
+  visibility: hidden;
+  position: absolute;
+  top: calc(calc(var(--df-size) * 1.7) + calc(var(--df-size) * 0.75) + 2px);
+  left: calc(100% - calc(var(--df-size)* 17) + 2px);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  width: calc(var(--df-size)* 17);
+  min-height: calc(var(--df-size) * 17);
+  border: 2px solid var(--df-border-color);
+  border-radius: var(--df-border-radius);
+  opacity: 0;
+  transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.date-picker__header {
+  /* позиционирование */
+  display: flex;
+  flex-direction: column;
+}
+
+.date-picker__month-switcher {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.date-picker__month-swithcer-title {
+  min-width: 12rem;
+  text-align: center;
+}
+
+.date-picker__switcher-button {
+  padding: 0.5rem;
+  --btn-background: transparent;
+  min-width: calc(var(--df-size) * 2);
+  height: calc(calc(var(--df-size)* 1.5) + calc(var(--df-size)* 0.25) + 0.5px);
+  --btn-icon-visibility: hidden;
+  color: var(--df-border-color)
+}
+
+.date-picker__switcher-button:hover {
+  --btn-hover-color: transparent;
+}
+
+
+.date-picker__switcher-button:focus {
+  box-shadow: 0 0 0 2px var(--df-focus-color);
+}
+
+
+.date-picker__calendar {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  vertical-align: middle;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.date-picker__header-cell,
+.date-picker__date-cell {
+  padding: calc(var(--df-size) * 0.3);
+}
+
+.date-picker__header-cell {
+  font-weight: bold;
+}
+
+.date-picker__date-cell:hover,
+.date-picker__date-cell:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--df-focus-color);
+  border-radius: var(--date-picker-border-radius);
+  cursor: pointer;
+}
+
+.date-picker__date-cell_inactive {
+  color: grey;
+  cursor: default;
+}
+
+.date-picker__date-cell_inactive:hover {
+  box-shadow: none
+}
+
+.date-picker_visible {
+  opacity: 1;
+  visibility: visible;
+  --btn-icon-visibility: visible;
+  transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.date-picker_visible .date-picker__switcher-button {
+  --btn-icon-visibility: visible;
+}

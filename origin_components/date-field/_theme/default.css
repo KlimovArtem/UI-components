@@ -1,0 +1,26 @@
+.date-field {
+  --df-size: 1.5rem;
+  --df-border-radius: calc(var(--df-size) / 3.2);
+  --df-border-color: darkgrey;
+  --df-focus-color: lightgrey;
+  --df-disabled-background: lightgrey;
+  --df-disabled-color: grey;
+  --df-valid-border-color: #198754;
+  --df-invalid-border-color: #dc3545;
+  --df-invalid-focus-color: #f6cdd1;
+  --df-valid-focus-color: #c6e1d4;
+}
+
+html {
+  font-family: Helvetica, sans-serif;
+  font-size: 10px;
+  box-sizing: border-box;
+}
+ 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}

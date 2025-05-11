@@ -1,0 +1,18 @@
+.date-field__button {
+  --btn-background: transparent;
+  position: absolute;
+  top: 0;
+  left: calc(100% - calc(var(--df-size) * 3));
+  width: calc(var(--df-size) * 2);
+  height: calc(calc(var(--df-size) * 1.5) + calc(var(--df-size) * 0.75) + 2px);
+  stroke: var(--df-border-color);
+  fill: transparent;
+}
+
+.date-field__button:hover {
+  --btn-hover-color: transparent;
+}
+
+.date-field__button:focus {
+  box-shadow: none;
+}

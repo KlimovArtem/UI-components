@@ -1,0 +1,53 @@
+@import url(../button/button.css);
+@import url(_theme/default.css);
+@import url(__input/date-field__input.css);
+@import url(__button/date-field__button.css);
+@import url(__date-picker/date-field__date-picker.css);
+
+.date-field {
+  /* positioning */
+  position: relative;
+  margin: 0;
+  /* size */
+  width: 100%;
+  height: calc(calc(var(--df-size) * 1.5) + calc(var(--df-size) * 0.75) + 4px);
+  padding: calc(var(--df-size) * 0.375) calc(var(--df-size) * 0.75);
+  line-height: 1.5;
+  border: 2px solid var(--df-border-color);
+  font-size: var(--df-size);
+  /* decoration */
+  font-family: inherit;
+  border-radius: var(--df-border-radius);
+  background-color: var(--df-background-color);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* state handling */
+.date-field:has(.date-field__input:focus) {
+  outline: 0;
+  box-shadow: 0 0 0 calc(var(--df-size) * 0.2) var(--df-focus-color);
+}
+
+.date-field:has(.date-field__input:disabled),
+.date-field:has(.date-field__input[readonly]) {
+  --df-background-color: var(--df-disabled-background);
+  --df-border-color: var(--df-disabled-color);
+  color: var(--df-disabled-color);
+  opacity: 1;
+}
+
+.date-field:has(.date-field__input:user-valid) {
+  --df-border-color: var(--df-valid-border-color);
+}
+
+.date-field:has(.date-field__input:focus:user-valid) {
+  --df-focus-color: var(--df-valid-focus-color);
+}
+
+.date-field:has(.date-field__input:user-invalid) {
+  --df-border-color: var(--df-invalid-border-color);
+}
+
+.date-field:has(.date-field__input:focus:user-invalid) {
+  --df-focus-color: var(--df-invalid-focus-color);
+}
