@@ -67,7 +67,14 @@ document.querySelectorAll("[data-select]").forEach((select) => {
   arowUp/arrowDown - перемещение по меню */
   select.addEventListener("keydown", event => {
     if (event.key === "Enter") {
-      selectOptions.classList.add("select__options_visible");
+      if (!selectOptions.classList.contains("select__options_visible")) {
+        selectOptions.classList.add("select__options_visible");
+      }
+      else {
+        selectInput.value = selectedOption.innerText;
+				selectOptions.classList.remove("select__options_visible");
+        event.stopPropagation();
+      }
     };
     if (event.key === "Escape") {
       selectOptions.classList.remove("select__options_visible");
@@ -84,8 +91,7 @@ document.querySelectorAll("[data-select]").forEach((select) => {
         selectedOption.setAttribute("data-selected", true);
       };
 			if (event.ctrlKey && event.key == "Enter") {
-				selectInput.value = selectedOption.innerText;
-				selectOptions.classList.remove("select__options_visible");
+
 			};
     };
 	});
