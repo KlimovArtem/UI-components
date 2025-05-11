@@ -4,7 +4,6 @@ document.querySelectorAll("[data-date-field]").forEach(dateField => {
   dateFieldInput = dateField.querySelector("[data-date-field__input]"),
   datePicker = dateField.querySelector("[data-date-picker]"),
   datePickerOpneButton = dateField.querySelector("[data-date-picker__open-button]"),
-  datePickerCloseButton = datePicker.querySelector("[data-date-picker__close-button]"),
   datePickerMonthSwitcherTitle = datePicker.querySelector("[data-date-picker__month-switcher-title]"),
   datePickerMonthSwitcherIncreaseButton = datePicker.querySelector("[data-date-picker__month-switcher-increase-button]"),
   datePickerMonthSwitcherDeacreaseButton = datePicker.querySelector("[data-date-picker__month-switcher-deacrease-button]"),
@@ -12,16 +11,35 @@ document.querySelectorAll("[data-date-field]").forEach(dateField => {
   
   /* открытие/закрытие выпадающего меню по клику на кнопку */
   datePickerOpneButton.addEventListener("click", (event) => {
-    if (datePicker.classList.contains("date-picker_visible")) {
-      datePicker.classList.remove("date-picker_visible");
-      dateFieldInput.focus();
-      event.stopPropagation();
-    } else {
+    if (!datePicker.classList.contains("date-picker_visible")) {
       datePicker.classList.add("date-picker_visible");
       generateCalendar();
       event.stopPropagation();
+    } else {
+      datePicker.classList.remove("date-picker_visible");
+      dateFieldInput.focus();
+      event.stopPropagation();
     };
   });
+
+  /* Управление с клавиатуры:
+  Enter - открыть календарь
+  Esc -  закрыть календарь */
+  dateField.addEventListener("keydown", event => {
+    if (event.key === "Enter") {
+      if (!datePicker.classList.contains("date-picker_visible")) {
+        dateFieldInput.blur();
+        generateCalendar();
+        datePicker.classList.add("date-picker_visible");
+        datePickerMonthSwitcherDeacreaseButton.focus();
+      };
+    };
+    if (event.key === "Escape" && datePicker.classList.contains("date-picker_visible")) {
+      datePicker.classList.remove("date-picker_visible");
+      dateFieldInput.focus();
+    };
+	});
+
   
   /* инициализация глобальных переменных для генерации календаря */
   let
@@ -67,9 +85,9 @@ document.querySelectorAll("[data-date-field]").forEach(dateField => {
     for (let i = 1; i <= daysInMonth; i++) {
       let currentWeekDay = weekDays.get(new Date(year, month, i).getDay());  /* текущий день недели */
       if (currentWeekDay == 6) {
-        dates += `<td class="date-picker__date-cell" data-date-picker__date-cell>${i}</td></tr><tr>`;
+        dates += `<td class="date-picker__date-cell" data-date-picker__date-cell tabindex=0>${i}</td></tr><tr>`;
       } else {
-        dates += `<td class="date-picker__date-cell" data-date-picker__date-cell>${i}</td>`;
+        dates += `<td class="date-picker__date-cell" data-date-picker__date-cell tabindex=0>${i}</td>`;
       }
     }
     
@@ -88,6 +106,16 @@ document.querySelectorAll("[data-date-field]").forEach(dateField => {
         datePicker.classList.remove("date-picker_visible");
         dateFieldInput.focus();
       });
+
+      cell.addEventListener("keydown", event => {
+        if (event.key == "Enter") {
+          let choosenDate = new Date(year, month, cell.innerText);
+          dateFieldInput.value = choosenDate.toLocaleDateString("ru");
+          datePicker.classList.remove("date-picker_visible");
+          dateFieldInput.focus();
+          event.stopPropagation();
+        }
+      });
     });
   };
   
@@ -103,6 +131,7 @@ document.querySelectorAll("[data-date-field]").forEach(dateField => {
     }
     
     generateCalendar();
+    event.stopPropagation();
   });
   
   /* Переключение месяца: увеличение месяца */
@@ -117,8 +146,9 @@ document.querySelectorAll("[data-date-field]").forEach(dateField => {
     }
     
     generateCalendar();
+    event.stopPropagation();
   });
-  
+
   /*закрытие при щелчке вне модального окна */
   document.addEventListener("click", event => {
     const datePickerRect = datePicker.getBoundingClientRect();

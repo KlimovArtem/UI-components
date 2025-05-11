@@ -23,23 +23,26 @@
   /* позиционирование */
   display: flex;
   flex-direction: column;
-  align-items: space-between;
-  gap: 0.25rem;
 }
 
 .date-picker__month-switcher {
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 2rem;
+}
+
+.date-picker__month-swithcer-title {
+  min-width: 12rem;
+  text-align: center;
 }
 
 .date-picker__switcher-button {
   padding: 0.5rem;
-  transform: translateY (-3px);
   --btn-background: transparent;
-  width: calc(var(--df-size) * 2);
-  height: calc(calc(var(--df-size) * 1.5) + calc(var(--df-size) * 0.75) + 2px);
+  min-width: calc(var(--df-size) * 2);
+  height: calc(calc(var(--df-size)* 1.5) + calc(var(--df-size)* 0.25) + 0.5px);
   --btn-icon-visibility: hidden;
   color: var(--df-border-color)
 }
@@ -48,9 +51,11 @@
   --btn-hover-color: transparent;
 }
 
+
 .date-picker__switcher-button:focus {
-  box-shadow: none;
+  box-shadow: 0 0 0 2px var(--df-focus-color);
 }
+
 
 .date-picker__calendar {
   table-layout: fixed;
@@ -70,7 +75,9 @@
   font-weight: bold;
 }
 
-.date-picker__date-cell:hover {
+.date-picker__date-cell:hover,
+.date-picker__date-cell:focus {
+  outline: none;
   box-shadow: 0 0 0 2px var(--df-focus-color);
   border-radius: var(--date-picker-border-radius);
   cursor: pointer;
