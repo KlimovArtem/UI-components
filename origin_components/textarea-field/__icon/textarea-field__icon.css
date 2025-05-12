@@ -1,6 +1,6 @@
 .textarea-field__icon {
   position: absolute;
-  top: calc(0+calc(var(--taf-size) * 0.375));
+  top: calc(0 + calc(var(--taf-size) * 0.375));
   left: calc(100% - calc(var(--taf-size) * 1.5));
   width: var(--taf-size);
   height: calc(calc(var(--taf-size) * 1) + calc(var(--taf-size) * 0.75) + 2px);

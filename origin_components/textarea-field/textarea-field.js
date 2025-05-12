@@ -1,6 +1,7 @@
+// biome-ignore lint/complexity/noForEach: <explanation>
 document.querySelectorAll("[data-textarea-field]").forEach((textarea) => {
-  const textareaInput = textarea.querySelector("[data-textarea-field__input]"),
-    maxlengthInfo = textarea.querySelector(
+  const textareaInput = textarea.querySelector("[data-textarea-field__input]");
+  const maxlengthInfo = textarea.querySelector(
       "[data-textarea-field__maxlenght-info]",
     );
 

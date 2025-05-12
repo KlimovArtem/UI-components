@@ -3,7 +3,11 @@
   list-style-type: none;
   position: absolute;
   visibility: hidden;
-  top: calc(calc(var(--select-size) * 1.7) + calc(var(--select-size) * 0.75) + 2px);
+  top: calc(
+    calc(var(--select-size) * 1.7) +
+    calc(var(--select-size) * 0.75) +
+    2px
+  );
   left: -2px;
   display: flex;
   flex-direction: column;

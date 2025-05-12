@@ -12,7 +12,9 @@
   /* размер */
   width: 100%;
   height: calc(
-    calc(var(--select-size) * 1.5) + calc(var(--select-size) * 0.75) + 4px
+    calc(var(--select-size) * 1.5) +
+    calc(var(--select-size) * 0.75) +
+    4px
   );
   padding: calc(var(--select-size) * 0.375) calc(var(--select-size) * 0.75);
   line-height: 1.5;
@@ -22,9 +24,7 @@
   font-family: inherit;
   border-radius: var(--select-border-radius);
   background-color: var(--select-background-color);
-  transition:
-    border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 /* контроль состояний */

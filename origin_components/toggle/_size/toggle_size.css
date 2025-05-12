@@ -1,11 +1,11 @@
 .toggle_size_s {
-	--toggle-thumb-size: 1rem;
+  --toggle-thumb-size: 1rem;
 }
 
 .toggle_size_m {
-	--toggle-thumb-size: 2rem;
+  --toggle-thumb-size: 2rem;
 }
 
 .toggle_size_l {
-	--toggle-thumb-size: 3rem;
+  --toggle-thumb-size: 3rem;
 }

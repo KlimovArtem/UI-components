@@ -2,23 +2,22 @@
 .text-field_with-icon_in-right {
   --tf-icon-visibility: visible;
   padding: calc(var(--tf-size) * 0.375)
-      calc(var(--tf-size) * 0.75 + var(--tf-size))
-      calc(var(--tf-size) * 0.375) calc(var(--tf-size) * 0.75);
+    calc(var(--tf-size) * 0.75 + var(--tf-size)) calc(var(--tf-size) * 0.375)
+    calc(var(--tf-size) * 0.75);
   --tf-icon-position: calc(
-          (calc(var(--tf-size) * 1.5) + calc(var(--tf-size) * 0.75) + 4px) /
-              10
-      )
-      0 0 calc(100% - calc(var(--tf-size) * 1.5));
+      (calc(var(--tf-size) * 1.5) + calc(var(--tf-size) * 0.75) + 4px) /
+      10
+    )
+    0 0 calc(100% - calc(var(--tf-size) * 1.5));
 }
 
 .text-field_with-icon_in-left {
   --tf-icon-visibility: visible;
   padding: calc(var(--tf-size) * 0.375) calc(var(--tf-size) * 0.75)
-      calc(var(--tf-size) * 0.375)
-      calc(var(--tf-size) * 0.75 + var(--tf-size));
+    calc(var(--tf-size) * 0.375) calc(var(--tf-size) * 0.75 + var(--tf-size));
   --tf-icon-position: calc(
-          (calc(var(--tf-size) * 1.5) + calc(var(--tf-size) * 0.75) + 4px) /
-              10
-      )
-      0 0 0.375rem;
+      (calc(var(--tf-size) * 1.5) + calc(var(--tf-size) * 0.75) + 4px) /
+      10
+    )
+    0 0 0.375rem;
 }

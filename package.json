@@ -1,0 +1,12 @@
+{
+  "name": "ui-components",
+  "version": "1.0.0",
+  "description": "## Description It's my UI-components pack for reuse in all my web app.",
+  "main": "",
+  "keywords": [],
+  "author": "Artem Klimov",
+  "license": "ISC",
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4"
+  }
+}
